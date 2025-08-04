@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preparação Mental para o Sul-Americano de Hipismo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #00C4CC, #7D2AE8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-button {
+            background: linear-gradient(90deg, #00C4CC, #7D2AE8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .flowchart-item {
+            position: relative;
+            z-index: 1;
+        }
+        .flowchart-item:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #7D2AE8;
+            z-index: -1;
+        }
+        @media (max-width: 768px) {
+            .flowchart-item:not(:last-child)::after {
+                content: '↓';
+                right: 50%;
+                top: 100%;
+                transform: translateX(50%);
+                margin-top: 10px;
+            }
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 320px;
+            width: 100%;
+            max-width: 450px;
+        }
+        .coach-image {
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-800">Clara Machado</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#desafio" class="text-gray-600 hover:text-purple-600">O Desafio</a>
+                <a href="#solucao" class="text-gray-600 hover:text-purple-600">A Solução</a>
+                <a href="#coach" class="text-gray-600 hover:text-purple-600">Sua Coach</a>
+                <a href="#contato" class="text-gray-600 hover:text-purple-600">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="hero" class="text-center py-16">
+            <h1 class="text-4xl md:text-6xl font-black mb-4">Rumo ao Ouro no Sul-Americano!</h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-8">Parabéns pela convocação! A sua técnica é indiscutível. Mas e a sua mente, está preparada para a pressão do pódio?</p>
+            <a href="#contato" class="cta-button text-white font-bold py-3 px-8 rounded-full text-lg">Prepare sua Mente para Vencer</a>
+        </section>
+
+        <section id="desafio" class="py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2">O Desafio Invisível do Cavaleiro</h2>
+                <p class="text-lg text-gray-600">No hipismo, 50% do sucesso é técnica. Os outros 50% são a força da sua mente.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Componentes da Vitória</h3>
+                    <div class="chart-container">
+                        <canvas id="successChart"></canvas>
+                    </div>
+                    <p class="text-center mt-4 text-gray-600">Muitos atletas focam apenas no treino físico, mas a clareza mental e o controle emocional são o que diferencia campeões.</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-xl font-bold mb-2">Ansiedade e Pressão</h4>
+                        <p>A expectativa por resultados pode ser esmagadora, afetando sua performance e a conexão com seu cavalo.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-xl font-bold mb-2">Medo de Falhar</h4>
+                        <p>O receio de cometer erros pode paralisar, impedindo que você e seu parceiro equino alcancem seu verdadeiro potencial.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-xl font-bold mb-2">Sincronia Quebrada</h4>
+                        <p>Seu estado emocional impacta diretamente seu cavalo. O estresse do cavaleiro gera um cavalo tenso e reativo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solucao" class="py-16 bg-gray-100 -mx-6 px-6">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-2">Forjando uma Mente de Campeão</h2>
+                    <p class="text-lg text-gray-600">O treinamento mental é a chave para transformar desafios em vitórias.</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row justify-around items-center text-center space-y-8 md:space-y-0 md:space-x-8 mb-16">
+                    <div class="flowchart-item bg-white p-6 rounded-lg shadow-lg w-64">
+                        <div class="text-5xl mb-2">🧠</div>
+                        <h4 class="text-xl font-bold">Resiliência</h4>
+                        <p>Enfrente adversidades com uma mente forte e inabalável.</p>
+                    </div>
+                    <div class="flowchart-item bg-white p-6 rounded-lg shadow-lg w-64">
+                        <div class="text-5xl mb-2">🎯</div>
+                        <h4 class="text-xl font-bold">Foco</h4>
+                        <p>Mantenha a concentração absoluta do início ao fim da prova.</p>
+                    </div>
+                    <div class="flowchart-item bg-white p-6 rounded-lg shadow-lg w-64">
+                        <div class="text-5xl mb-2">❤️</div>
+                        <h4 class="text-xl font-bold">Conexão</h4>
+                        <p>Aprofunde a sintonia com seu cavalo para uma performance fluida.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-xl mt-12">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Sua Evolução como Atleta</h3>
+                    <p class="text-center text-gray-600 mb-6">Veja a transformação que o treinamento mental pode proporcionar em suas habilidades chave.</p>
+                    <div class="chart-container" style="max-width: 500px;">
+                        <canvas id="evolutionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="coach" class="py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2">Conheça sua Coach, Clara Machado</h2>
+                <p class="text-lg text-gray-600">Uma atleta e treinadora que entende suas paixões e seus desafios.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden md:flex">
+                <div class="md:w-1/3 bg-cover" style="background-image: url(clarafoto.jpeg);">
+                </div>
+                <div class="md:w-2/3 p-8 md:p-12">
+                    <h3 class="text-3xl font-bold mb-4 gradient-text">Uma Vida Dedicada ao Hipismo</h3>
+                    <p class="text-gray-600 mb-6">Fundadora do Dressage Team RS, Clara não é apenas uma coach, mas uma atleta profissional de adestramento que vive a intensidade do esporte. Sua experiência em competições, aliada a uma formação sólida, oferece uma perspectiva única e eficaz.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-purple-600 font-bold text-xl mr-3">✓</span>
+                            <div>
+                                <h4 class="font-semibold">Coach FEI Nível II</h4>
+                                <p class="text-gray-600">Certificação internacional que atesta sua competência para treinar atletas de alto rendimento.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 font-bold text-xl mr-3">✓</span>
+                            <div>
+                                <h4 class="font-semibold">Atleta Profissional</h4>
+                                <p class="text-gray-600">Experiência prática em competições, entendendo profundamente a pressão e as nuances do esporte.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 font-bold text-xl mr-3">✓</span>
+                            <div>
+                                <h4 class="font-semibold">Especialista em Neurociência do Esporte</h4>
+                                <p class="text-gray-600">Aplicação de conhecimentos avançados para otimizar o desempenho e a recuperação mental.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 font-bold text-xl mr-3">✓</span>
+                            <div>
+                                <h4 class="font-semibold">Metodologia Comprovada</h4>
+                                <p class="text-gray-600">Abordagem que integra o melhor do conhecimento técnico do hipismo com estratégias de coaching mental para resultados reais.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="py-16 text-center bg-gray-800 text-white -mx-6 px-6">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Pacote Especial: Rumo ao Sul-Americano</h2>
+                <p class="text-lg mb-8">Ofereço um programa de treinamento mental intensivo e personalizado, 100% online, para garantir que você chegue no Paraguai com sua mente tão afiada quanto sua técnica.</p>
+                <a href="https://wa.me/5551981142337?text=Olá, Clara! Tenho interesse no pacote de preparação mental para o Campeonato Sul-Americano." target="_blank" class="cta-button text-white font-bold py-4 px-10 rounded-full text-xl inline-block">
+                    Quero a Minha Vaga!
+                </a>
+                <p class="mt-4 text-sm text-gray-400">Vagas limitadas para garantir atenção individualizada.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <p>&copy; 2025 Clara Machado - Treinamento Mental para Atletas de Hipismo. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+
+            const commonTooltipOptions = {
+                callbacks: {
+                    title: tooltipTitleCallback
+                }
+            };
+
+            const successCtx = document.getElementById('successChart').getContext('2d');
+            new Chart(successCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Técnica e Física', 'Força Mental'],
+                    datasets: [{
+                        label: 'Componentes do Sucesso',
+                        data: [50, 50],
+                        backgroundColor: [
+                            '#00C4CC',
+                            '#7D2AE8'
+                        ],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#1A202C',
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        },
+                        tooltip: commonTooltipOptions
+                    },
+                    cutout: '70%'
+                }
+            });
+
+            const evolutionCtx = document.getElementById('evolutionChart').getContext('2d');
+            new Chart(evolutionCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Confiança', 'Foco', ['Controle do', 'Estresse'], 'Resiliência', ['Sincronia com', 'o Cavalo']],
+                    datasets: [{
+                        label: 'Antes do Treinamento',
+                        data: [5, 6, 4, 5, 6],
+                        backgroundColor: 'rgba(0, 196, 204, 0.2)',
+                        borderColor: '#00C4CC',
+                        pointBackgroundColor: '#00C4CC',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#00C4CC'
+                    }, {
+                        label: 'Após o Treinamento',
+                        data: [9, 9, 8, 9, 9],
+                        backgroundColor: 'rgba(125, 42, 232, 0.2)',
+                        borderColor: '#7D2AE8',
+                        pointBackgroundColor: '#7D2AE8',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#7D2AE8'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                             labels: {
+                                color: '#1A202C',
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        },
+                        tooltip: commonTooltipOptions
+                    },
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: '#e2e8f0'
+                            },
+                            grid: {
+                                color: '#e2e8f0'
+                            },
+                            pointLabels: {
+                                font: {
+                                    size: 14
+                                },
+                                color: '#1A202C'
+                            },
+                            ticks: {
+                                backdropColor: 'transparent',
+                                stepSize: 2,
+                                color: '#6b7280'
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 10
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
